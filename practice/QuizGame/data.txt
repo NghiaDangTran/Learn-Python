@@ -1,0 +1,61 @@
+q1 long #*#*#Question#*#*#
+r = lambda q: q * 2
+s = lambda q: q * 3
+x = 2
+x = r(x)
+x = s(x)
+x = r(x)
+print(X)
+24 #*#*#answer#*#*#
+q2 long #*#*#Question#*#*#
+a = 4.5
+b = 2
+print (a//b)
+2.0 #*#*#answer#*#*#
+q3 long #*#*#Question#*#*#
+a = True
+b = False
+c = False
+  
+if a or b and c:
+    print ("GEEKSFORGEEKS")
+else:
+    print ("geeksforgeeks")
+GEEKSFORGEEKS #*#*#answer#*#*#
+q4 long #*#*#Question#*#*#
+count = 1 
+  
+def doThis():
+  
+    global count
+  
+    for i in (1, 2, 3): 
+        count += 1
+  
+doThis()
+  
+print (count)
+4 #*#*#answer#*#*#
+q5 long #*#*#Question#*#*#
+my_tuple = (1, 2, 3, 4)
+my_tuple.append( (5, 6, 7) )
+print len(my_tuple)
+Error! #*#*#answer#*#*#
+q6 mutiple #*#*#Question#*#*#
+What is one of the big differences between traditional media and social media?
+a. participatory production
+b. social media reaches only a few people at a time
+c. the management structure of the companies
+d. traditional media offers no way for audiences to communicate with media producers
+a #*#*#answer#*#*#
+q7 mutiple #*#*#Question#*#*#
+In 1768, Captain James Cook set out to explore which ocean?
+A. Pacific Ocean
+
+B. Atlantic Ocean
+
+C. Indian Ocean
+
+D. Arctic Ocean
+a #*#*#answer#*#*#
+
