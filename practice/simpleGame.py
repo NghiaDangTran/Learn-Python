@@ -1,6 +1,8 @@
+# this will make a simple rock paper scissor game
+
 import random
 
-choices = ["rock", "paper", "scissors"]
+choices = ["rock", "paper", "scissor"]
 comp = random.choice(choices)
 
 user = None
