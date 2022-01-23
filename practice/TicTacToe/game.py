@@ -1,6 +1,6 @@
 import random
 from player import HumanPlayer ,Noob_comp
-
+from SO_YOU_WANT_TO_CHOSE_HARD_MODE import HARD_MODE
 
 class TicTacToe:
     def __init__(self,row,col):
@@ -29,22 +29,14 @@ class TicTacToe:
                    result.append((i,j))
            
         return result
-    # def num_move_ok(self):
-    #     return len(self.move_ok())
-    def fill_postion(self,atrow,atcol,value):
+   
+    def fill_postion(self,atrow,atcol,value,printOK=True):
         if(self.current_winner!=None):
             print("there already a winner pls make new game")
             return 
         if len(self.move_ok())==0:
             print("NO more place to move")
             return
-        # if(self.player1==""):
-        #     self.player1=value
-        # elif self.player2=="" and self.player1!=value:
-        #     self.player2=value
-        # elif self.player1!=value or self.player2!=value: 
-        #     print("there are 2 player alrady")
-        #     pass
       
         if(self.board[atrow][atcol]=="_" ):
             self.board[atrow][atcol]=value
@@ -62,11 +54,11 @@ class TicTacToe:
                 rdiag+=1
         if checkC==self.col or checkR==self.col or diag==self.col or rdiag==self.col:
             self.current_winner= value
-        if(self.current_winner!=None):
+        if(self.current_winner!=None and printOK):
             print("player",format(self.current_winner),"won")
 
             return
-        if len(self.move_ok())==0:
+        if len(self.move_ok())==0 and printOK:
             print("The game is TIe no one win")
             return
 
@@ -74,7 +66,15 @@ class TicTacToe:
 
     def check_winner(self):
         return self.check_winner
-   
+    # def num_empty_squares(self):
+    #     result=0
+    #     for i in range(self.col):
+    #        for j in range(self.row):
+               
+    #            if(self.board[i][j]=="_"):
+    #                result+=1
+           
+    #     return result   
 
 def start(TicTacToe,Xplayer,Oplayer):
     newGamne=random.randint(1, 10)
@@ -115,7 +115,9 @@ def start(TicTacToe,Xplayer,Oplayer):
 
 
 if __name__ == '__main__':
-    x_player = HumanPlayer('X')
-    o_player = Noob_comp('O')
-    t = TicTacToe(3,3)
-    start(t, x_player, o_player)
+    # x_player = HARD_MODE('X',5)
+    # o_player = HARD_MODE('O',5)
+    t = TicTacToe(3 ,3)
+    t.print_board()
+    t.board
+        # start(t, x_player, o_player)
