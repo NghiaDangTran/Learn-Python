@@ -46,4 +46,3 @@ class HARD_MODE():
                     best = sim_score
             # print(best)
         return best
-
