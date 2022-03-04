@@ -1,0 +1,2628 @@
+
+
+
+
+
+
+
+
+Lesson 01-02-03 - Kien thuc Python co ban - P01
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Phần 01 - Kiến thức Python cơ bản dành cho học viên IMIC!¶
+
+
+
+
+
+
+
+Liên hệ Phòng Tuyển Sinh đào tạo nhân sự: (024)3 7557 666 - (028)2253 2345 - 091 6878 224
+Hòm thư: phongdaotao@imic.edu.vn
+Website: https://www.imic.edu.vn/
+
+
+
+
+
+
+
+Cú pháp hàm print trong Python¶
+
+
+
+
+
+In [2]:
+
+
+print('1. Chào mừng bạn đến với khoá học Python Cơ Bản tại IMIC.')
+    print('2. Khoá học Python này rất hữu ích.')
+    
+
+
+
+
+
+
+
+
+
+1. Chào mừng bạn đến với khoá học Python Cơ Bản tại IMIC.
+    2. Khoá học Python này rất hữu ích.
+    
+
+
+
+
+
+
+
+
+
+Khai báo biến và sử dụng hàm input để nhận giá trị người dùng gõ vào từ bàn phím¶
+
+
+
+
+
+In [2]:
+
+
+a = input("Nhập vào 1 giá trị bất kỳ bạn muốn: ")
+    print(a)
+    
+
+
+
+
+
+
+
+
+
+Nhập vào 1 giá trị bất kỳ bạn muốn: 10
+    10
+    
+
+
+
+
+
+
+
+
+
+Bạn đã lưu trữ giá trị biến, vậy giả sử bạn nhập vào 1 giá trị số thì bạn có thể thay đổi giá trị số đó rồi in ra như sau
+
+
+
+
+
+In [1]:
+
+
+a = input('Nhập vào 1 số nguyên bất kỳ bạn muốn: ')
+    int(a) * 100
+    
+
+
+
+
+
+
+
+
+
+Nhập vào 1 số nguyên bất kỳ bạn muốn: 15
+    
+
+
+
+Out[1]:
+
+1500
+
+
+
+
+
+
+
+
+
+
+Các bạn cần lưu ý là giá trị mà bạn nhập vào qua hàm input luôn trả đầu ra là kiểu chuỗi nhé.
+Và các bạn ghi nhớ các bạn muốn in ra được kết quả là phép nhân như trên thì bạn buộc phải sử dụng hàm chuyển đổi. Hàm int(a) có tác dụng chuyển giá trị a từ dạng str (string) sang int (interger).
+
+
+
+
+
+
+
+Giờ ta sẽ khai báo 2 biến a và b sau đó tính tổng của nó nhé.
+
+
+
+
+
+In [2]:
+
+
+# Khai báo và khởi tạo giá trị cho biến
+    a = input('Nhập vào giá trị a: ')
+    b = input('Nhập vào giá trị b: ')
+    
+    # Xử lý tính toán giá trị của các biến
+    ketqua = int(a) + int(b)
+    
+    # Hiển thị kết quả
+    f'Kết quả của chúng ta là {ketqua}'
+    
+
+
+
+
+
+
+
+
+
+Nhập vào giá trị a: 10
+    Nhập vào giá trị b: 20
+    
+
+
+
+Out[2]:
+
+'Kết quả của chúng ta là 30'
+
+
+
+
+
+
+
+
+
+Cách viết f ở trên được gọi là f-strings. Nếu bạn bỏ chữ f đi thì chúng ta sẽ in ra 1 chuỗi bình thường là {ketqua} chứ không lấy ra giá trị ketqua mà chúng ta đã tính toán ở trên. Lưu ý f-strings chỉ bắt đầu xuất hiện từ phiên bản Python
+                3.6.
+
+
+
+
+
+
+Conditional in Python (if, else, elif ...)¶
+
+
+
+
+
+
+If Single Statement¶
+
+
+
+
+
+In [6]:
+
+
+# Khai báo biến
+    ten = 'Trần Thị B'
+    tuoi = 40
+    
+    # Xét các tình huống có thể xảy ra
+    if ten == 'Nguyễn Văn A' and tuoi == 30:
+        print(f'Tên của tôi là {ten}. Năm nay tôi {tuoi} tuổi')
+    if ten == 'Trần Thị B' or ten == 'Hoàng Văn C':
+        print('Tên của bạn là Trần Thị B hoặc Hoàng Văn C')
+    
+
+
+
+
+
+
+
+
+
+Tên của bạn là Trần Thị B hoặc Hoàng Văn C
+    
+
+
+
+
+
+
+
+
+
+Sử dụng toán tử in¶
+
+
+
+
+
+In [7]:
+
+
+# Khai báo biến ten và gán giá trị cho nó
+    ten = 'Hoàng Văn C'
+    
+    # Nếu biến ten tồn tại trong List gồm 2 phần tử là Trần Thị B và Hoàng Văn C thì trả kết quả như phía dưới
+    # Ngược lại thì báo là Tên không tồn tại.
+    if ten in ['Hoàng Văn C', 'Trần Thị B']:
+        print('Tên của bạn là Trần Thị B hoặc Hoàng Văn C')
+    else:
+        print('Tên không tồn tại')
+    
+
+
+
+
+
+
+
+
+
+Tên của bạn là Trần Thị B hoặc Hoàng Văn C
+    
+
+
+
+
+
+
+
+
+
+Viết 1 bài toán cộng trừ nhân chia đơn giản¶
+
+
+
+
+
+In [8]:
+
+
+a = input('Nhập vào giá trị a: ')
+    b = input('Nhập vào giá trị b: ')
+    
+    toantu = input('Bạn muốn sử dụng phép toán nào sau đây: +, -, *, /')
+    
+    if toantu == '+':
+        ketqua = int(a) + int(b)
+    elif toantu == '-':
+        ketqua = int(a) - int(b)
+    elif toantu == '*':
+        ketqua = int(a) * int(b)
+    else:
+        ketqua = int(a) / int(b)
+        
+    # Hiển thị kết quả:
+    f"Kết quả là: {ketqua}"
+    
+
+
+
+
+
+
+
+
+
+Nhập vào giá trị a: 10
+    Nhập vào giá trị b: 50
+    Bạn muốn sử dụng phép toán nào sau đây: +, -, *, /+
+    
+
+
+
+Out[8]:
+
+'Kết quả là: 60'
+
+
+
+
+
+
+
+
+
+Bài toán xác định trạng thái nhiệt độ của nước¶
+
+
+
+
+
+
+
+
+
+
+
+
+In [8]:
+
+
+temp = int(input('Nhập vào 1 nhiệt độ bạn muốn: '))
+    
+    if temp <= 0:
+        ketqua = 'Frozen'
+    elif temp <= 12:
+        ketqua = 'Cold'
+    elif temp <= 25:
+        ketqua = 'Warm'
+    elif temp <= 75:
+        ketqua = 'Hot'
+    elif temp <= 100:
+        ketqua = 'Very Hot'
+    else:
+        ketqua = 'Burning'
+        
+    print(f'Trạng thái của nước là {ketqua}')
+    
+
+
+
+
+
+
+
+
+
+Nhập vào 1 nhiệt độ bạn muốn: 120
+    Trạng thái của nước là Burning
+    
+
+
+
+
+
+
+
+
+
+Kiểu dữ liệu trong Python¶
+
+
+
+
+
+
+
+Tên biến không được bắt đầu bằng số.
+Tên biến không được trùng với các từ khoá trong Python.
+                    
+Tên biến chỉ chứa các ký tự số, chữ và dấu _
+Tên biến trong Python phân biệt chữ hoa và chữ thường. Vì thế 4 biến pi, PI, Pi và pI là 4 biến khác nhau.
+Tên biến không được chứa dấu.
+Tên biến không được đặt tên quá dài.
+
+
+
+
+
+
+
+Kiểu dữ liệu số nguyên (int)¶
+
+
+
+
+
+In [9]:
+
+
+a = 10
+    
+    # Sử dụng hàm Print để hiển thị giá trị của biến ra màn hình
+    a
+    
+
+
+
+
+
+
+
+Out[9]:
+
+10
+
+
+
+
+
+
+
+
+
+Kiểu dữ liệu số thực (float)¶
+
+
+
+
+
+In [10]:
+
+
+# Khai báo biến lưu giá trị số thực
+    a = 7.5
+    
+    # Sử dụng hàm print để hiển thị giá trị của biến a
+    print('Giá trị số thập phân của chúng ta là: %1.2f' %a)
+    
+
+
+
+
+
+
+
+
+
+Giá trị số thập phân của chúng ta là: 7.50
+    
+
+
+
+
+
+
+
+
+
+Ta sẽ sử dụng cấu trúc hàm print như sau:
+
+print('%1.2f' %a)
+Với f: float => hiển thị số thực.
+
+
+(1 số trước dấu phẩy, có thể bỏ qua)
+
+
+.2 (2 số sau dấu phẩy, bạn muốn bao nhiêu số thì nhập vào)
+%a: (sẽ thể hiện giá trị của biến a dưới dạng số thực và có 2 số sau dấu phẩy)
+
+
+
+
+
+
+
+Giờ ta sẽ thử nhập vào 2 biến a và b và in ra cùng lúc 2 giá trị đó với 1 số sau dấu phẩy
+
+
+
+
+
+In [11]:
+
+
+a = 8.5
+    b = 4.6
+    
+    print('Giá trị a là %1.1f và b là %1.1f' %(a,b))
+    
+
+
+
+
+
+
+
+
+
+Giá trị a là 8.5 và b là 4.6
+    
+
+
+
+
+
+
+
+
+
+Kiểu dữ liệu dạng string¶
+
+
+
+
+
+In [8]:
+
+
+# Khai báo biến lưu trữ giá trị chuỗi
+    chuoi = 'Tên tôi là Hoàng Văn C'
+    print(chuoi)
+    
+
+
+
+
+
+
+
+
+
+Tên tôi là Hoàng Văn C
+    
+
+
+
+
+
+
+
+
+
+Kiểu dữ liệu list¶
+
+
+
+
+
+In [10]:
+
+
+a = ["apple", "banana", "cherry"]
+    
+    # hiển thị giá trị biến a:
+    print(a)
+    
+    # hiển thị kiểu dữ liệu của biến a
+    type(a)
+    
+
+
+
+
+
+
+
+
+
+['apple', 'banana', 'cherry']
+    
+
+
+
+Out[10]:
+
+list
+
+
+
+
+
+
+
+
+
+Kiểu dữ liệu Tuple¶
+
+
+
+
+
+In [8]:
+
+
+a = ("apple", "banana", "cherry")
+    
+    # hiển thị giá trị biến a
+    print(a)
+    
+    # hiển thị kiểu dữ liệu của biến a
+    print(type(a))
+    
+
+
+
+
+
+
+
+
+
+('apple', 'banana', 'cherry')
+    <class 'tuple'>
+    
+
+
+
+
+
+
+
+
+
+Kiểu dữ liệu Range¶
+
+
+
+
+
+In [9]:
+
+
+a = range(6)
+    
+    # hiển thị giá trị biến a
+    print(a)
+    
+    # hiển thị kiểu dữ liệu biến a
+    print(type(a)) 
+    
+
+
+
+
+
+
+
+
+
+range(0, 6)
+    <class 'range'>
+    
+
+
+
+
+
+
+
+
+
+Kiểu dữ liệu dict¶
+
+
+
+
+
+In [10]:
+
+
+a = {"name" : "John", "age" : 36}
+    
+    # hiển thị giá trị của biến a
+    print(a)
+    
+    # hiển thị kiểu dữ liệu biến a
+    print(type(a)) 
+    
+
+
+
+
+
+
+
+
+
+{'name': 'John', 'age': 36}
+    <class 'dict'>
+    
+
+
+
+
+
+
+
+
+
+Kiểu dữ liệu set¶
+
+
+
+
+
+In [11]:
+
+
+a = {"apple", "banana", "cherry"}
+    
+    # hiển thị giá trị biến a
+    print(a)
+    
+    # hiển thị kiểu dữ liệu a
+    print(type(a)) 
+    
+
+
+
+
+
+
+
+
+
+{'banana', 'apple', 'cherry'}
+    <class 'set'>
+    
+
+
+
+
+
+
+
+
+
+Kiểu dữ liệu bool¶
+
+
+
+
+
+In [12]:
+
+
+a = True
+    
+    # hiển thị giá trị biến a
+    print(a)
+    
+    # hiển thị kiểu dữ liệu biến a
+    print(type(a)) 
+    
+
+
+
+
+
+
+
+
+
+True
+    <class 'bool'>
+    
+
+
+
+
+
+
+
+
+
+Kết hợp các kiểu dữ liệu đã học¶
+
+%d: Số nguyên (digit)
+%f: Số thực (float)
+%s: Chuỗi (string)
+
+
+
+
+
+
+In [13]:
+
+
+# Khai báo các biến chứa giá trị số nguyên
+    a = 100
+    b = 200
+    
+    # Sử dụng toán tử số học để tính toán
+    ketqua = a + b
+    
+    # In ra kết quả
+    print('Giá trị kiểu số nguyên: %d' %ketqua)
+    print('Giá trị kiểu số thực: %.2f'%ketqua)
+    
+
+
+
+
+
+
+
+
+
+Giá trị kiểu số nguyên: 300
+    Giá trị kiểu số thực: 300.00
+    
+
+
+
+
+
+
+
+
+In [14]:
+
+
+# Khai báo 2 biến kiểu chuỗi
+    a = 'Hello'
+    b = 'World'
+    ketqua = a + b
+    
+    print('Nội dung của chúng ta là %s' %ketqua)
+    
+
+
+
+
+
+
+
+
+
+Nội dung của chúng ta là HelloWorld
+    
+
+
+
+
+
+
+
+
+In [15]:
+
+
+# Khai báo biến và khởi tạo giá trị cho biến
+    a, b, c = 100, 200, 300
+    
+    # In ra các giá trị biến a, b, c kiểu float
+    print('Giá trị của a là %.2f, giá trị của b là %.1f, giá trị của c là %.3f' %(a,b,c))
+    
+
+
+
+
+
+
+
+
+
+Giá trị của a là 100.00, giá trị của b là 200.0, giá trị của c là 300.000
+    
+
+
+
+
+
+
+
+
+
+Các cách truyền giá trị dạng chữ vào trong hàm print¶
+
+
+
+
+
+
+Truyền đối số với tuple trong Python¶
+
+
+
+
+
+In [16]:
+
+
+# Khai báo 2 biến với tên và điểm số
+    ten = 'Nguyễn Văn A'
+    diem = 8.5
+    
+    # Truyền đối số với tuple trong Python
+    print('Tổng điểm của bạn %s là %.1f điểm' %(ten, diem))
+    
+
+
+
+
+
+
+
+
+
+Tổng điểm của bạn Nguyễn Văn A là 8.5 điểm
+    
+
+
+
+
+
+
+
+
+
+Truyền đối số với Dictionary trong Python¶
+
+
+
+
+
+In [17]:
+
+
+# Truyền đối số với Dictionary trong Python {key: value, key: value, ...}
+    print('Tổng điểm của bạn %(na)s là %(sc).2f điểm' %{'na': ten, 'sc': diem})
+    
+
+
+
+
+
+
+
+
+
+Tổng điểm của bạn Nguyễn Văn A là 8.50 điểm
+    
+
+
+
+
+
+
+
+
+
+Truyển đối số sử dụng kiểu new-style¶
+
+
+
+
+
+In [18]:
+
+
+# Truyền đối số sử dụng kiểu new-style cho định dạng chuỗi
+    print('Tổng điểm của bạn {} là {}'.format(ten, diem))
+    
+
+
+
+
+
+
+
+
+
+Tổng điểm của bạn Nguyễn Văn A là 8.5
+    
+
+
+
+
+
+
+
+
+
+Truyền đổi số sử dụng kiểu new-style với số index (lưu ý vị trí đầu tiên có index = 0)¶
+
+
+
+
+
+In [19]:
+
+
+# Truyền đối số sử dụng kiểu new-style với số index
+    print('Tổng điểm của bạn {1} là {0}'.format(diem, ten))
+    
+
+
+
+
+
+
+
+
+
+Tổng điểm của bạn Nguyễn Văn A là 8.5
+    
+
+
+
+
+
+
+
+
+
+Truyền đối số sử dụng kiểu new-style với tên biến được định nghĩa¶
+
+
+
+
+
+In [20]:
+
+
+# Truyền đối số sử dụng kiểu new-style với tên biến được định nghĩa
+    print('Tổng điểm của bạn {na} là {sc}'.format(na = ten, sc = diem))
+    
+
+
+
+
+
+
+
+
+
+Tổng điểm của bạn Nguyễn Văn A là 8.5
+    
+
+
+
+
+
+
+
+
+
+Nối chuỗi trong Python¶
+
+
+
+
+
+In [21]:
+
+
+# Nối chuỗi thành từng phần trong Python
+    print('Điểm của bạn',ten,'là',diem)
+    
+
+
+
+
+
+
+
+
+
+Điểm của bạn Nguyễn Văn A là 8.5
+    
+
+
+
+
+
+
+
+
+
+Nối chuỗi bằng f-style formatting¶
+
+
+
+
+
+In [22]:
+
+
+# Nối chuỗi bằng f-style formatting
+    print(f'Bạn {ten} có điểm là {diem}')
+    
+
+
+
+
+
+
+
+
+
+Bạn Nguyễn Văn A có điểm là 8.5
+    
+
+
+
+
+
+
+
+
+
+Nối chuỗi bằng toán tử trong Python¶
+
+
+
+
+
+In [23]:
+
+
+# Nối chuỗi bằng toán tử trong Python
+    print('Điểm của bạn ' + ten + ' là ' + str(diem))
+    
+
+
+
+
+
+
+
+
+
+Điểm của bạn Nguyễn Văn A là 8.5
+    
+
+
+
+
+
+
+
+
+
+Các cách truyền các giá trị dạng số vào trong hàm print¶
+
+
+
+
+
+
+Nối chuỗi đơn giản bằng toán tử trong Python¶
+
+
+
+
+
+In [24]:
+
+
+a = 10
+    b = 20
+    ketqua = a + b
+    
+    # In ra kết quả
+    print('Tổng của 2 số ' + str(a) + ' và ' + str(b) + ' là ' + str(ketqua))
+    
+
+
+
+
+
+
+
+
+
+Tổng của 2 số 10 và 20 là 30
+    
+
+
+
+
+
+
+
+
+
+Nối chuỗi bằng cách tách ra thành các thành phần riêng biệt trong hàm print¶
+
+
+
+
+
+In [25]:
+
+
+print('Tổng của 2 số',a,'và',b,'là',ketqua)
+    
+
+
+
+
+
+
+
+
+
+Tổng của 2 số 10 và 20 là 30
+    
+
+
+
+
+
+
+
+
+
+Sử dụng tuple để in ra giá trị¶
+
+
+
+
+
+In [26]:
+
+
+print('Tổng của 2 số %d và %d là %d' %(a,b,ketqua))
+    
+
+
+
+
+
+
+
+
+
+Tổng của 2 số 10 và 20 là 30
+    
+
+
+
+
+
+
+
+
+
+Sử dụng f-style formatting để in ra giá trị¶
+
+
+
+
+
+In [27]:
+
+
+print(f'Tổng của 2 số {a} và {b} là {ketqua}')
+    
+
+
+
+
+
+
+
+
+
+Tổng của 2 số 10 và 20 là 30
+    
+
+
+
+
+
+
+
+
+
+Sử dụng new-style formatting¶
+
+
+
+
+
+In [28]:
+
+
+print('Tổng của 2 số {} và {} là {}'.format(a,b,ketqua))
+    
+
+
+
+
+
+
+
+
+
+Tổng của 2 số 10 và 20 là 30
+    
+
+
+
+
+
+
+
+
+
+Phân biệt str và repr¶
+
+str: Hàm str dùng để chuyển đổi và hiển thị định dạng chuỗi (Chỉ giá trị thôi)
+repr: Hàm repr dùng để hiển thị đầy đủ thông tin của đối tượng.
+
+
+
+
+
+
+In [29]:
+
+
+print('Tổng của 2 số ' + repr(a) + ' và ' + repr(b) + ' là ' + repr(ketqua))
+    
+
+
+
+
+
+
+
+
+
+Tổng của 2 số 10 và 20 là 30
+    
+
+
+
+
+
+
+
+
+
+Trong trường hợp này thì bạn dùng str và repr đều thu được cùng 1 kết quả
+
+
+
+
+
+In [30]:
+
+
+print('Tổng của 2 số ' + str(a) + ' và ' + str(b) + ' là ' + str(ketqua))
+    
+
+
+
+
+
+
+
+
+
+Tổng của 2 số 10 và 20 là 30
+    
+
+
+
+
+
+
+
+
+
+Sử dụng %.2f, %d trong hàm print¶
+
+
+
+
+
+In [31]:
+
+
+print('Tổng của 2 số %d và %.1f là %.2f' %(a,b,c))
+    
+
+
+
+
+
+
+
+
+
+Tổng của 2 số 10 và 20.0 là 300.00
+    
+
+
+
+
+
+
+
+
+
+Khai báo biến và kiểm tra kiểu dữ liệu của biến¶
+
+
+
+
+
+In [32]:
+
+
+a = 10
+    b = 50.5
+    c = 'Tên tôi là Trần Thị B'
+    
+    # Xác định kiểu dữ liệu của 3 biến trên
+    print('Kiểu dữ liệu của biến a là', type(a))
+    print('Kiểu dữ liệu của biến b là', type(b))
+    print('Kiểu dữ liệu của biến c là', type(c))
+    
+
+
+
+
+
+
+
+
+
+Kiểu dữ liệu của biến a là <class 'int'>
+    Kiểu dữ liệu của biến b là <class 'float'>
+    Kiểu dữ liệu của biến c là <class 'str'>
+    
+
+
+
+
+
+
+
+
+
+Phạm vi của biến¶
+
+
+
+
+
+
+Làm quen với biến toàn cục và biến cục bộ¶
+
+
+
+
+
+In [33]:
+
+
+# Khai báo 1 biến và khởi tạo giá trị cho biến đó
+    f = 1000
+    print(f)
+    
+    def somefunction():
+        f = 'Tôi rất muốn học Python'
+        print(f)
+        
+    somefunction()
+    
+
+
+
+
+
+
+
+
+
+1000
+    Tôi rất muốn học Python
+    
+
+
+
+
+
+
+
+
+
+Chúng ta đều sử dụng print(f) để in ra giá trị nhưng kết quả chúng ta thu được là khác nhau? Vì sao?
+                
+
+Đây là 1 biến toàn cục. Nghĩa là giờ nếu bạn gõ lại 1 lệnh print(f) ngoài phần def thì kết quả thu được vẫn là giá trị 1000 ban đầu.
+
+
+
+
+
+
+
+
+
+Đây là 1 biến cục bộ. Vì giá trị của biến f này chỉ có tác dụng trong hàm somefunction mà thôi. Chính vì thế khi bạn chạy lệnh thì nó sẽ in ra kết quả là Tôi rất muốn học Python chứ không phải 1000.
+
+
+
+
+
+
+
+
+Nhiều bạn sẽ băn khoăn việc là hàm def somefunction() của chúng ta không có điểm đầu và điểm kết thúc thì làm sao chúng ta biết được lúc nào nó kết thúc hay lúc nào nó bắt đầu. Vì Python phân biệt với nhau bằng các Tab. Có nghĩa là cứ
+                    tab các lệnh vào thì các lệnh bên trong được coi là con của các lệnh trên đó. Chỉ đơn giản như vậy mà thôi ^^. Và đây là quy tắc bạn bắt buộc phải nhớ khi làm việc với Python nhé ^^.
+Ngoài ra bổ sung thêm là từ def viết tắt của từ define (dịch ra là định nghĩa) nhé ^^.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Sử dụng từ khóa Global để thiết lập cho biến thành toàn cục như ví dụ dưới đây:
+                
+
+
+
+
+
+
+Cách định nghĩa và gọi 1 hàm trong Python?¶
+
+
+
+
+
+
+Sử dụng từ khóa "def" để định nghĩa hàm (function)¶
+
+
+
+
+
+
+
+
+
+
+
+
+
+Lỗi khi định nghĩa hàm¶
+
+
+
+
+
+
+
+Ví dụ dưới đây cho thấy lỗi khi bạn định nghĩa phần xử lý của hàm không đúng.
+Trong Python sử dụng "indent"(lùi vào trong) để thể hiện khối lệnh, không giống như những ngôn ngữ khác sử dụng {} hoặc begin-end để tạo khối lệnh.
+Hãy xem chi tiết ví dụ dưới đây:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Khắc phục lỗi bằng cách tuân thủ quy tắc "Indent"¶
+
+
+
+
+
+
+
+
+
+
+
+
+
+Bài tập thực hành Python¶
+
+
+
+
+
+
+Practice 01¶
+
+
+
+
+
+In [33]:
+
+
+# Viết chương trình bằng Python để in ra tổng của hai số bằng cách sử dụng các biến.
+    # In ra tổng của hai số:
+    # Tổng của 29 và 30 là: 59
+    
+    a = int(input("input a: "))
+    b = int(input("input b: "))
+    sum = a + b
+    print(f"The sum of {a} and {b} is : {sum}")
+    
+
+
+
+
+
+
+
+
+
+input a: 29
+    input b: 30
+    The sum of 29 and 30 is : 59
+    
+
+
+
+
+
+
+
+
+
+Practice 02¶
+
+
+
+
+
+In [37]:
+
+
+# Viết chương trình Python để tìm giá trị lớn nhất giữa hai số bằng cách sử dụng if else. 
+    # Chương trình Python để nhập hai số từ người dùng và tìm số lớn nhất giữa hai số bằng cách sử dụng if else. 
+    # Sử dụng từ khóa def để định nghĩa hàm có tên là "find_max".
+    
+    # Example
+    # Input
+    # Input num1: 10
+    # Input num2: 20
+    # Output
+    # Maximum = 20
+    
+    def find_max(i,j):
+        # Cach 1:
+        # if i>j:
+        #    return i 
+        #return j
+    
+        # Cach 2:
+        return i if i>j else j    
+    
+    a = int(input("Input num1:"))
+    b = int(input("Input num2:"))
+    
+    print(f"Maximum = {find_max(a,b)}")
+    
+
+
+
+
+
+
+
+
+
+Input num1:10
+    Input num2:20
+    Maximum = 20
+    
+
+
+
+
+
+
+
+
+
+Practice 03¶
+
+
+
+
+
+In [36]:
+
+
+# Viết một chương trình Python để tìm số lớn nhất giữa 3 số bằng if else.
+    # Sử dụng từ khóa def để định nghĩa hàm có tên là "find_max". 
+    
+    # Example
+    # Input
+    # Input num1: 10
+    # Input num2: 20
+    # Input num3: 15
+    
+    # Output
+    # Maximum is: 20
+    
+    def find_max(i,j,k):   
+        return i if ((i > j) and (i > k)) else j if ((j > i) and (j > k)) else k
+    
+    a = int(input("Input num1: "))
+    b = int(input("Input num2: "))
+    c = int(input("Input num3: "))
+    
+    print(f"Maximum = {find_max(a,b,c)}")
+    
+
+
+
+
+
+
+
+
+
+Input num1: 10
+    Input num2: 20
+    Input num3: 15
+    Maximum = 20
+    
+
+
+
+
+
+
+
+
+
+Practice 04¶
+
+
+
+
+
+In [14]:
+
+
+# Viết một chương trình Python để kiểm tra dương, âm hoặc 0 bằng cách sử dụng if else.
+    # Sử dụng từ khóa def để định nghĩa hàm có tên là "check_number".
+    
+    # Example
+    # Input
+    # Input number: 23
+    
+    # Output
+    # 23 is positive
+    
+    def check_number(i):
+        return "Number is POSITIVE" if i>0 else "Number is NEGATIVE" if i<0 else "Number is ZERO"
+    num = int(input("Input number:"))
+    print(check_number(num))
+    
+
+
+
+
+
+
+
+
+
+Input number:23
+    Number is POSITIVE
+    
+
+
+
+
+
+
+
+
+
+Practice 05¶
+
+
+
+
+
+In [18]:
+
+
+# Viết một chương trình Python để kiểm tra xem một số có chia hết cho 5 và 11 hoặc không sử dụng if else.
+    
+    # Example
+    # Input
+    # Input number: 55
+    
+    # Output
+    # Number is divisible by 5 and 11
+    
+    num = int(input("Enter any number: "))
+    if((num % 5 == 0) and (num % 11 == 0)):
+        print("Number is divisible by 5 and 11")
+    else:
+        print("Number is not divisible by 5 and 11")
+    
+
+
+
+
+
+
+
+
+
+Enter any number: 55
+    Number is divisible by 5 and 11
+    
+
+
+
+
+
+
+
+
+
+Practice 06¶
+
+
+
+
+
+In [16]:
+
+
+# Viết chương trình Python để kiểm tra xem một số là số chẵn hay lẻ bằng cách sử dụng if else.
+    
+    # Example
+    # Input
+    # Input number: 10
+    
+    # Output
+    # 10 is even number
+    
+    num = int(input("Enter any number to check even or odd: "))
+    if(num % 2 == 0):
+        print("Number is Even.")
+    else:
+        print("Number is Odd.")
+    
+
+
+
+
+
+
+
+
+
+Enter any number to check even or odd: 10
+    Number is Even.
+    
+
+
+
+
+
+
+
+
+
+Practice 07¶
+
+
+
+
+
+In [20]:
+
+
+# Viết một chương trình python để kiểm tra năm nhuận bằng cách sử dụng if else.
+    # Cách kiểm tra xem một năm nhất định có phải là năm nhuận hay không trong lập trình python.
+    # Chương trình Python để nhập năm từ người dùng và kiểm tra xem năm đã cho có phải là năm nhuận hay không 
+    # sử dụng phát biểu If Else.
+    # Sử dụng từ khóa def để định nghĩa hàm có tên là "check_leap_year".
+    
+    # Example
+    # Input year: 2020
+    # Output: 2020 is leap year.
+    # If year is exactly divisible by 4  and year is not divisible by 100
+    # or year is exactly divisible by 400 then
+    # Return:
+    # TRUE: the year is leap year.
+    # FALSE: year is normal year
+    
+    def check_leap_year(y):
+        return True if (y % 4 == 0 and y % 100 !=0) or (y % 400==0) else False
+    
+    num = int(input("Input year:"))
+    if check_leap_year(num):
+        print("- The year is leap year")
+    else: 
+        print("- Year is normal year")
+    
+
+
+
+
+
+
+
+
+
+Input year:2020
+    - The year is leap year
+    
+
+
+
+
+
+
+
+
+
+Practice 08¶
+
+
+
+
+
+In [21]:
+
+
+# Viết chương trình python để nhập số tháng từ (1-12), chương trình sẽ hiển thị số ngày của tháng đó.
+    # Có thể sử dụng thêm 1 số hàm đã xây dựng.
+    
+    # Example
+    # Input
+    # Enter month number: 1
+    
+    # Output
+    # It contains 31 days.
+    
+    def check_leap_year(y):
+        return True if (y % 4 == 0 and y % 100 !=0) or (y % 400==0) else False
+    
+    month = int(input("Month?"))
+    if month in [4,6,9,11]:
+        print("It contains 30 days.")
+    elif month in [1,3,5,7,8,10,12]:
+        print("It contains 31 days.")
+    elif month == 2:
+        year = int(input("Year?"))
+        if check_leap_year(year):
+            print("It contains 29 days.")
+        else:
+            print("It contains 28 days.")
+    
+
+
+
+
+
+
+
+
+
+Month?1
+    It contains 31 days.
+    
+
+
+
+
+
+
+
+
+
+Practice 09¶
+
+
+
+
+
+In [39]:
+
+
+# Viết chương trình python để nhập số tháng trong khoảng (1-12)
+    # và in số ngày trong tháng bằng cách sử dụng if else trong lập trình python. 
+    # Hãy logic để tìm số ngày trong tháng trong chương trình python.
+    # Example:
+    # Enter month number:2
+    # Enter year number:2020
+    # Output: The month: 2 and year: 2020 has 29 days.
+    
+    def day_of_month(i): 
+        data = { 
+            4: "30", 
+            6: "30", 
+            9: "30",
+            11: "30"        
+        }   
+        return data.get(i, "31")
+        
+    def check_leap_year(y):
+        return True if (y % 4 == 0 and y % 100 !=0) or (y % 400==0) else False
+    
+    month = int(input("Enter month number:"))
+    if month < 1 or month > 12:
+        print("Invalid input! Please enter month number between (1-12).")
+    else:   
+        if month == 2:
+            year = int(input("Enter year number:"))
+            if check_leap_year(year):
+                print(f"- The month: {month} and year: {year} has 29 days.")
+            else: 
+                print(f"- The month: {month} and year: {year} has 28 days.")
+        else:
+            print(f"- The month: {month} has {day_of_month(month)} days.")
+    
+
+
+
+
+
+
+
+
+
+Enter month number:2
+    Enter year number:2020
+    - The month: 2 and year: 2020 has 29 days.
+    
+
+
+
+
+
+
+
+
+
+Practice 10¶
+
+
+
+
+
+In [25]:
+
+
+# Viết chương trình để tìm ra số ngày theo Tháng | Năm.
+    # Có thể xây dựng các hàm để giải quyết nghiệp vụ.
+    # Example:
+    # Input a month: 2
+    # Input a year: 2020
+    # Output: It contains 29 days.
+    
+    def check_leap_year(year):
+        if ((year % 4 == 0) and (year % 100 != 0)) or (year % 400 == 0):
+            return True
+        return False
+    
+    def check_day_of_month(month, year):
+        if month < 1 or month > 12:
+            return "Invalid input! Please enter month number between (1-12)."
+        else:
+            if month == 4 or month == 6 or month == 9 or month == 11:
+                return 30
+            elif month == 2:
+                if year < 1900 or year > 9999:
+                    return "Invalid input! Please enter year number between (1900-9999)."
+                else:
+                    if check_leap_year(year):
+                        return 29
+                    return 28
+            else:
+                return 31
+    month = int(input("- Input a month: "))
+    year = int(input("- Input a year: "))
+    print(check_day_of_month(month, year))
+    
+
+
+
+
+
+
+
+
+
+- Input a month: 2
+    - Input a year: 2020
+    29
+    
+
+
+
+
+
+
+
+
+
+Practice 11¶
+
+
+
+
+
+In [26]:
+
+
+# Viết chương trình python để kiểm tra xem một tam giác có hợp lệ hay không? Các góc được người dùng nhập vào.
+    # Example
+    # Input
+    # Input first angle: 60
+    # Input second angle: 30
+    # Input third angle: 90
+    
+    # Output
+    # The triangle is valid
+    
+    angle1 = int(input("Enter 1 angles of triangle?"))
+    angle2 = int(input("Enter 2 angles of triangle?"))
+    angle3 = int(input("Enter 3 angles of triangle?"))
+    
+    sum = angle1 + angle2 + angle3
+    if(sum == 180 and angle1 != 0 and angle2 != 0 and angle3 != 0): 
+        print("Triangle is valid.")
+    else:
+        print("Triangle is not valid.")
+    
+
+
+
+
+
+
+
+
+
+Enter 1 angles of triangle?60
+    Enter 2 angles of triangle?30
+    Enter 3 angles of triangle?90
+    Triangle is valid.
+    
+
+
+
+
+
+
+
+
+
+Practice 12¶
+
+
+
+
+
+In [27]:
+
+
+# Viết chương trình python để nhập các cạnh của tam giác và kiểm tra xem tam giác có phải là
+    # tam giác đều, vô hướng hoặc tam giác cân bằng cách sử dụng if else.
+    # Logic để phân loại tam giác thành tam giác đều, vô hướng hoặc cân trong chương trình python.
+    # Example
+    # Input
+    # Input first side: 30
+    # Input second side: 30
+    # Input third side: 30
+    
+    # Output
+    # Triangle is equilateral triangle
+    side1 = int(input("Input first side: "))
+    side2 = int(input("Input second side: "))
+    side3 = int(input("Input third side: "))
+    
+    if(side1==side2 and side2==side3):
+        print("Tam giác đều.")
+    elif (side1==side2 or side1==side3 or side2==side3):
+        print("Tam giác cân.")
+    else:
+        print("tam giác vô hướng.")
+    
+
+
+
+
+
+
+
+
+
+Input first side: 30
+    Input second side: 30
+    Input third side: 30
+    Equilateral triangle.
+    
+
+
+
+
+
+
+
+
+
+Practice 13¶
+
+
+
+
+
+In [31]:
+
+
+# Viết chương trình python để nhập điểm của 5 môn Vật lý, Hóa học, Sinh học,
+    # Toán học và khoa học, tính tỷ lệ phần trăm và điểm theo các điều kiện đã cho:
+    # If percentage >= 90% : Grade A
+    # If percentage >= 80% : Grade B
+    # If percentage >= 70% : Grade C
+    # If percentage >= 60% : Grade D
+    # If percentage >= 40% : Grade E
+    # If percentage < 40% : Grade F
+    # Example
+    # Input
+    # Input marks of five subjects: 95
+    # 95
+    # 97
+    # 98
+    # 90
+    # Output
+    
+    # Percentage = 95.00 
+    # Grade A
+    
+    def check_grade(a, b, c, d, e):
+        per = (a + b + c + d + e) / 5.0
+        if per >= 90:
+            return f"Grade A - Percentage: {per}"
+        elif per >= 80:
+            return f"Grade B - Percentage: {per}"
+        elif per >= 70:
+            return f"Grade C - Percentage: {per}"
+        elif per >= 60:
+            return f"Grade D - Percentage: {per}"
+        elif per >= 40:
+            return f"Grade E - Percentage: {per}"
+        return f"Grade F - Percentage: {per}"
+    
+    a = int(input("- inout a: "))
+    b = int(input("- inout b: "))
+    c = int(input("- inout c: "))
+    d = int(input("- inout d: "))
+    e = int(input("- inout e: "))
+    print(check_grade(a, b, c, d, e))
+    
+
+
+
+
+
+
+
+
+
+- inout a: 95
+    - inout b: 95
+    - inout c: 97
+    - inout d: 98
+    - inout e: 90
+    Grade A - Percentage: 95.0
+    
+
+
+
+
+
+
+
+
+
+Practice 14¶
+
+
+
+
+
+In [32]:
+
+
+# Chương trình Python để nhập lương cơ bản và tính tổng lương của một nhân viên. Viết chương trình python để nhập lương cơ bản của nhân viên và tính tổng lương theo điều kiện cho trước.
+    # Mức lương cơ bản <= 10000: HRA = 20%, DA = 80%
+    # Mức lương cơ bản từ 10001 đến 20000: HRA = 25%, DA = 90%
+    # Lương cơ bản> = 20001: HRA = 30%, DA = 95%
+    # Cách tính tổng lương của một nhân viên bằng if else trong lập trình python.
+    # Chương trình tính tổng lương của một nhân viên sử dụng if else trong chương trình python.
+    # Logic để tìm tổng lương của nhân viên trong chương trình python.
+    # Example:
+    # Input basic salary of an employee: 22000
+    # Output:
+    # Gross salary = 44000
+    
+    def calculate_gross_salary(i):   
+        # Khai báo và khởi tạo dữ liệu cho biến
+        da = 0.0  # float
+        hra = 0.0 # float
+        
+        # Xét các tình huống, khả năng có thể xảy ra
+        if i <= 10000:
+            da  = i * 0.8
+            hra = i * 0.2    
+        elif i <= 20000:
+            da  = i * 0.9
+            hra = i * 0.25
+        else:
+            da  = i * 0.95
+            hra = i * 0.3    
+        return i + hra + da 
+    
+    print(calculate_gross_salary(22000))
+    
+
+
+
+
+
+
+
+
+
+49500.0
+    
+
+
+
+
+
+
+
+
+
+Practice 15¶
+
+
+
+
+
+In [ ]:
+
+
+# Viết chương trình python để nhập một ký tự từ người dùng và kiểm tra xem ký tự đã cho
+    # ký tự là bảng chữ cái hoặc không. Làm thế nào để kiểm tra xem một ký tự
+    # có phải là bảng chữ cái hay không trong lập trình python. Logic để kiểm tra xem một ký tự có phải là bảng 
+    # chữ cái hay không trong chương trình python.
+    
+    # Example
+    # Input
+    # Input character: a
+    
+    # Output
+    # 'a' is alphabet
+    def check_alphabet(character):
+        return True if ("a" <= character <= "z") or ("A" <= character <= "Z") else False
+        # if ("a" <= character <= "z") or ("A" <= character <= "Z"):
+        #    return True
+        # return False
+    
+    char = input("- Input A - Z or a - z: ")
+    if check_alphabet(char):
+        print("Character là một ALPHABET.")
+    else:
+        print("Character không là ALPHABET.")
+    
+
+
+
+
+
+
+
+
+
+Practice 16¶
+
+
+
+
+
+In [ ]:
+
+
+# Viết chương trình bằng Python để tính thể tích của một khối cầu.
+    # v=(4 x 3.14 x radius x radius x radius)/3
+    # Sample Output:
+    # Calculate the volume of a sphere :
+    # ----------------------------------
+    # Input the radius of a sphere : 6
+    # The volume of a sphere is : 904.32
+    radius = int(input("Nhập bán kính của hình cầu: "))
+    volsp=(4*3.14*radius*radius*radius)/3
+    print(f"Thể tích của một khối cầu là : {volsp}")
+    
+
+
+
+
+
+
+
+
+
+Practice 17¶
+
+
+
+
+
+In [ ]:
+
+
+# Viết chương trình bằng python để tìm diện tích và chu vi hình tròn.
+    # Sample Output:
+    # Find the area and circumference of any circle :
+    # ------------------------------------------------
+    # Input the radius(1/2 of diameter) of a circle : 5
+    # The area of the circle is : 78.5397
+    # The circumference of the circle is : 31.4159
+    import math
+    print("\n\n Tìm diện tích và chu vi của một hình tròn bất kỳ :")
+    print("------------------------------------------------")
+    radius = int(input("Nhập bán kính (1/2 đường kính) của hình tròn: "))
+    
+    circum = 2*math.pi*radius
+    area = math.pi*(radius*radius)
+    print("Diện tích của hình tròn là : %.4f" % area)
+    print("Chu vi của hình tròn là : %.4f" % circum)
+    
+
+
+
+
+
+
+
+
+
+Practice 18¶
+
+
+
+
+
+In [1]:
+
+
+# Viết chương trình bằng python để tìm góc thứ ba của tam giác.
+    # Sample Output:
+    # Find the third angle of a triangle :
+    # -----------------------------------------
+    # Input the 1st angle of the triangle : 30
+    # Input the 2nd angle of the triangle : 60
+    # The 3rd of the triangle is : 90
+    
+    print("\n\n Tìm góc thứ ba của một tam giác :")
+    print("-------------------------------------")
+    ang1 = int(input("Nhập góc thứ 1 của tam giác :"))
+    ang2 = int(input("Nhập góc thứ 2 của tam giác :"))
+    
+    ang3=180-(ang1+ang2)
+    print(f"Thứ 3 của tam giác là : {ang3}")
+    
+
+
+
+
+
+
+
+
+
+
+     Tìm góc thứ ba của một tam giác :
+    -------------------------------------
+    Nhập góc thứ 1 của tam giác :30
+    Nhập góc thứ 2 của tam giác :60
+    Thứ 3 của tam giác là : 90
+    
+
+
+
+
+
+
+
+
+
+Practice 19¶
+
+
+
+
+
+In [2]:
+
+
+# Viết chương trình bằng python để kiểm tra xem một số là số dương, số âm hay số 0.
+    # Sample Output:
+    # Check whether a number is positive, negative or zero :
+    # ------------------------------------------------------
+    # Input a number : 8
+    num = int(input("Nhập một số :"))
+    
+    if num > 0:
+        print("Số đã nhập là số dương.")
+    elif num < 0:
+        print("Số đã nhập là số âm.")
+    else:
+        print("Số đã nhập là số không.")
+    
+
+
+
+
+
+
+
+
+
+Nhập một số :8
+    Số đã nhập là số dương.
+    
+
+
+
+
+
+
+
+
+In [ ]:
+
+
+ 
+    
+
+
+
+
+
+
+
+
+
